@@ -1,0 +1,81 @@
+body {
+  /* Chose the first one VS Code suggested. */
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgb(179, 111, 242);
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+label {
+  display: block;
+  border-radius: 0.4rem;
+}
+
+input,
+select {
+  width: 100%;
+  line-height: 2em;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+label {
+  margin-top: 1rem;
+}
+
+#title,
+#description {
+  margin-top: 3rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px rgb(0, 0, 0);
+}
+
+form {
+  max-width: 768px;
+  min-width: 360px;
+  width: 60vw;
+  margin: 0px auto;
+  padding: 2rem;
+  box-shadow: 1px 1px black;
+}
+
+form {
+  background-color: blueviolet;
+  color: aliceblue;
+  border-radius: 1rem;
+}
+
+#gender-label,
+#entertainment {
+  width: 100%;
+}
+
+#gender-label input,
+#entertainment input {
+  display: inline;
+  width: unset;
+}
+
+#gender-label label {
+  display: unset;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+#submit {
+  background-color: rebeccapurple;
+  color: white;
+  font-weight: 700;
+  padding: 0.5rem;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
