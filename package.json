@@ -1,0 +1,19 @@
+{
+  "name": "freecodecamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --write \"**/*.{css,html,md,json}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "postcss": "^8.4.27",
+    "prettier": "^3.0.1",
+    "prettier-plugin-css-order": "^2.0.0",
+    "prettier-plugin-organize-attributes": "^1.0.0"
+  }
+}

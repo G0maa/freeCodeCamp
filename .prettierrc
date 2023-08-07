@@ -4,5 +4,9 @@
   "tabWidth": 2,
   "singleQuote": true,
   "trailingComma": "all",
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "plugins": [
+    "prettier-plugin-css-order",
+    "prettier-plugin-organize-attributes"
+  ]
 }
