@@ -1,0 +1,210 @@
+:root {
+  --background-color: #eeeeee;
+  --darkbackground-color: #dddddd;
+  --font-color: #000;
+  --accent-color: #f1c42f;
+  --darkaccent-color: #f08c02;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* i.e. 1rem = 10px */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+a:visited {
+  color: unset;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  justify-items: center;
+}
+
+main > * {
+  grid-column: 2/3;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+#header {
+  display: grid;
+  position: sticky;
+  top: 0;
+  grid-template-columns: 250px 1fr;
+  background-color: var(--background-color);
+  padding: 1rem 2rem 0rem 2rem;
+}
+
+#header-img {
+  padding: 1.5rem;
+}
+
+#nav-bar {
+  display: flex;
+  justify-self: end;
+  margin-right: 1rem;
+  /* float: right; */
+}
+
+.nav-link {
+  margin-right: 4rem;
+  padding: 2rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--darkaccent-color);
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#email {
+  margin: 1rem;
+  padding: 0.1rem;
+  width: 70%;
+}
+
+#submit {
+  margin: 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: var(--accent-color);
+  padding: 0.5rem;
+  width: 50%;
+  font-weight: 700;
+}
+
+#features i {
+  margin: 2rem;
+  color: var(--darkaccent-color);
+  font-size: 4rem;
+}
+
+.feature-element {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) 8fr;
+  align-items: center;
+}
+.feature-element h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+#pricing {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  /* width: 100%; */
+}
+
+.pricing-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+  /* padding: 1rem 3rem; */
+}
+
+.pricing-element > h3 {
+  background-color: var(--darkbackground-color);
+  /* This one controls padding for the pricing element */
+  padding: 1rem 5rem;
+  font-size: 1.5rem;
+}
+
+.pricing-element > p {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 2rem;
+  /* text-align: center; */
+}
+
+.pricing-element > ul {
+  margin-top: 0.5rem;
+  list-style-type: none;
+  text-align: center;
+}
+
+.pricing-element > ul > li {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.pricing-element > button {
+  margin: 2rem 0 1rem 0;
+  border: 0;
+  border-radius: 0.3rem;
+  background-color: var(--accent-color);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+.pricing-element > button:hover,
+#submit:hover {
+  transition: 0.25s;
+  cursor: pointer;
+  background-color: var(--darkaccent-color);
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  float: right;
+  background-color: var(--darkbackground-color);
+  padding: 1rem;
+  width: 100%;
+}
+
+.footer-link {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  #header {
+    grid-template-columns: 1fr;
+  }
+
+  #nav-bar {
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #pricing {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #nav-bar {
+    flex-direction: column;
+  }
+}
