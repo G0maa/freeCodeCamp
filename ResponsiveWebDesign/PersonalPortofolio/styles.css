@@ -1,0 +1,231 @@
+:root {
+  --background-color: #272829;
+  --font-color: #61677a;
+  --accent-color1: #d8d9da;
+  --accent-color2: #fff6e0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* i.e. 2rem = 20px */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--accent-color2);
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+#navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: flex-end;
+  border-bottom: 1px solid black; /* maybe change to some other color */
+  background-color: var(--accent-color2);
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+#navbar > a {
+  padding: 2rem 1.5rem;
+}
+
+#navbar > a:hover {
+  background-color: var(--accent-color1);
+}
+
+#navbar > a:last-of-type {
+  margin-right: 1rem;
+}
+
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(39, 40, 41);
+  background: linear-gradient(
+    45deg,
+    rgba(39, 40, 41, 1) 0%,
+    rgba(97, 103, 122, 1) 35%,
+    rgba(216, 217, 218, 1) 100%
+  );
+  height: calc(100vh - 4rem); /* 100% of width minus size of padding of navar */
+  font-size: 3rem;
+  text-align: center;
+}
+
+#welcome-section > p {
+  margin-top: 1rem;
+  color: var(--accent-color1);
+  font-style: italic;
+  font-weight: 700;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+}
+
+#projects > h2 {
+  margin: 3rem auto;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.5rem;
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+#projects-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* src: https://css-tricks.com/a-responsive-grid-layout-with-no-media-queries/ */
+  /* grid-template-columns: repeat(auto-fill, minmax(50rem, 1fr)); */
+  gap: 4rem;
+  margin: 0 auto;
+  max-width: 90vw;
+}
+
+.project-tile > a > img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.project-title {
+  margin: 1rem 0rem;
+  color: white;
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.project-title::after,
+.project-title::before {
+  opacity: 0;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  color: orange;
+}
+
+.project-title::after {
+  margin-left: 1rem;
+  content: '/>';
+}
+
+.project-title::before {
+  margin-right: 1rem;
+  content: '<';
+}
+
+.project-tile:hover .project-title::before,
+.project-tile:hover .project-title::after {
+  opacity: 1;
+}
+
+#profile-link {
+  display: block;
+  transition-duration: 0.25s;
+  margin: 2rem auto;
+  background-color: var(--accent-color2);
+  padding: 1.5rem 4rem;
+  width: 200px;
+  color: var(--font-color);
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#profile-link-icon {
+  position: absolute;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  margin-top: 2px;
+  margin-left: 4px;
+}
+
+#profile-link:hover {
+  background-color: var(--accent-color1);
+  color: var(--font-color);
+}
+
+#profile-link:hover #profile-link-icon {
+  margin-left: 1rem;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 4rem);
+}
+
+#contact > h2 {
+  font-size: 4rem;
+}
+
+#contact > p {
+  margin: 0.5rem 0;
+  font-style: italic;
+  font-size: 2.5rem;
+}
+
+#contact-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-link {
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  padding: 1rem;
+  color: var(--accent-color2);
+  font-size: 3rem;
+}
+
+.contact-link:hover {
+  transform: translateY(1rem);
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-self: flex-end;
+  border-top: 2px solid var(--accent-color2);
+  padding: 1rem 10rem;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 520px) {
+  #navbar,
+  #footer,
+  #contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #projects-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
